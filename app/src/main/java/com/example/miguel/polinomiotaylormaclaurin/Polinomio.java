@@ -5,6 +5,7 @@ public class Polinomio {
     private int n, x, derivada, resultadoDerivada;
     private double resultado;
 
+
     public enum Funcion{
         COSENO,
         SENO,
