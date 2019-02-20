@@ -37,8 +37,7 @@ public class Polinomio {
     }
 
     private int factorial(int numero){
-        if(numero == 0) return 1;
-        else return numero * factorial(numero-1);
+        return (numero == 0)? 1: numero * factorial(numero-1);
     }
 
 
