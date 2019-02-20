@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PolinomioTaylor/Maclaurin</string>
+    <string name="sin">Sin</string>
+    <string name="cos">Cos</string>
+    <string name="exponential">Exponential</string>
+    <string name="calculate">Calculate</string>
 </resources>
