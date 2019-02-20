@@ -2,27 +2,31 @@ package com.example.miguel.polinomiotaylormaclaurin;
 
 public class Polinomio {
 
-    private int n, x, resultado, derivada, resultadoDerivada;
+    private int n, x, derivada, resultadoDerivada;
+    private double resultado;
 
-    private enum Funcion{
+    public enum Funcion{
         COSENO,
         SENO,
         EULER
     }
 
-    private void polinomios(Funcion funcion){
+    private double polinomios(Funcion funcion, int x, int n){
         resultado = 0;
         for(int i = 0; i < n; i++){
-            resultado += derivada(funcion) * Math.pow(x, i) / factorial(i);
+            resultado += derivada(funcion, i) * Math.pow(x, i) / factorial(i);
         }
+        return resultado;
     }
 
-    private int derivada(Funcion funcion){
+    private int derivada(Funcion funcion, int i){
 
         switch(funcion){
             case SENO:
+                resultadoDerivada = (i%2 == 0)? 0 : (int) Math.pow(-1,i+1);// Si es par = 0      Si es impar alterna entre 1 y -1
                 break;
             case COSENO:
+                resultadoDerivada = (i%2 == 1)? 0 : (int) Math.pow(-1,i);// Si es impar = 0      Si es par alterna entre 1 y -1
                 break;
             case EULER:
                 resultadoDerivada = 1;
