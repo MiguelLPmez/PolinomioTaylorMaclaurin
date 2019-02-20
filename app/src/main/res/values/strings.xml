@@ -4,4 +4,6 @@
     <string name="cos">Cos</string>
     <string name="exponential">Exponential</string>
     <string name="calculate">Calculate</string>
+    <string name="number_of_terms">Number of terms</string>
+    <string name="estimation_point">Estimation point</string>
 </resources>
