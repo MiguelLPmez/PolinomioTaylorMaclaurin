@@ -18,6 +18,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
+        <TextView
+            android:id="@+id/aprox5"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:text="Insert the data"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/terms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/number_of_terms"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="141dp" />
+
+        <EditText
+            android:id="@+id/point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/estimation_point"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="205dp" />
+
         <RadioGroup
             android:id="@+id/rGroup"
             android:layout_width="match_parent"
@@ -49,51 +77,35 @@
                 android:text="@string/exponential" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/terms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/number_of_terms"
-            android:inputType="number"
-            tools:layout_editor_absoluteX="18dp"
-            tools:layout_editor_absoluteY="141dp" />
-
-        <EditText
-            android:id="@+id/point"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/estimation_point"
-            android:inputType="number"
-            tools:layout_editor_absoluteX="18dp"
-            tools:layout_editor_absoluteY="205dp" />
-
         <TextView
             android:id="@+id/aprox"
             android:layout_width="match_parent"
-            android:layout_height="80px"
-            android:text="TextView"
+            android:layout_height="90px"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/aprox2"
+            android:id="@+id/ea"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_height="90px"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/aprox3"
+            android:id="@+id/er"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_height="90px"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/ep"
+            android:layout_width="match_parent"
+            android:layout_height="90px"
             android:textSize="24sp" />
 
         <Button
             android:id="@+id/btnCalculate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="calculos"
             android:text="@string/calculate"
             tools:layout_editor_absoluteX="148dp"
             tools:layout_editor_absoluteY="447dp" />
