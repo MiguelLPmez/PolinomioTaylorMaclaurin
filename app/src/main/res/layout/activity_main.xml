@@ -51,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="109dp"
             android:layout_marginBottom="8dp"
+            android:checkedButton="@+id/rSin"
             app:layout_constraintBottom_toTopOf="@+id/terms"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="16dp">

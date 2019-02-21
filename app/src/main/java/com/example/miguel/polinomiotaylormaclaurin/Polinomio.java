@@ -12,7 +12,7 @@ public class Polinomio {
         EULER
     }
 
-    private double polinomios(Funcion funcion, int x, int n){
+    public double polinomios(Funcion funcion, int x, int n){
         resultado = 0;
         for(int i = 0; i < n; i++){
             resultado += derivada(funcion, i) * Math.pow(x, i) / factorial(i);
