@@ -14,9 +14,9 @@ public final class Errores {
     private static double valorReal(int funcion, double punto){
         switch(funcion){
             case 0:
-                return Math.sin(punto);
+                return Math.sin(Math.toRadians(punto));
             case 1:
-                return Math.cos(punto);
+                return Math.cos(Math.toRadians(punto));
             case 2:
                 return Math.exp(punto);
             default:
