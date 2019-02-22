@@ -50,9 +50,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void dataVerification(){
-        if(terms.getText().toString().length() == 0 || point.getText().toString().length() == 0)
+        if(terms.getText().toString().length() == 0 || point.getText().toString().length() == 0) {
             btnCalculate.setEnabled(false);
-        else
+            rGroup.clearCheck();
+        } else
             btnCalculate.setEnabled(true);
     }
 
@@ -93,9 +94,11 @@ public class MainActivity extends AppCompatActivity {
             er.setText("ER:    " + eRelativo);
 
             double ePorcentual = Errores.porcentual(typef, x, a);
-            ep.setText("ERP: " + ePorcentual);
-        }else
+            ep.setText("ERP:  " + ePorcentual);
+        }else {
             btnCalculate.setEnabled(false);
+            rGroup.clearCheck();
+        }
     }
 
     public void rGroupPerformed(View v){
