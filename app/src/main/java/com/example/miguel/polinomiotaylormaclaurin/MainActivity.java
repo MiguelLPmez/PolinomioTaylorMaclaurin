@@ -17,10 +17,15 @@ public class MainActivity extends AppCompatActivity {
     Polinomio p;
     EditText terms, point;
 
+    public MainActivity(){
+        p = new Polinomio();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         terms = findViewById(R.id.terms);
         point = findViewById(R.id.point);
@@ -38,7 +43,16 @@ public class MainActivity extends AppCompatActivity {
 
         btnCalculate = findViewById(R.id.btnCalculate);
 
-        rGroup = (RadioGroup) findViewById(R.id.rGroup);
+        rGroup = findViewById(R.id.rGroup);
+
+        btnCalculate.setEnabled(false);
+    }
+
+    public void dataVerification(){
+        if(terms.getText().toString().length() == 0 || point.getText().toString().length() == 0)
+            btnCalculate.setEnabled(false);
+        else
+            btnCalculate.setEnabled(true);
     }
 
     public void labelSettings(){
@@ -61,14 +75,17 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
-    public void calculos(View v){
-        int x = Integer.parseInt(String.valueOf(point.getText()));
-        int n = Integer.parseInt(String.valueOf(terms.getText()));
+    public void calculatePErformed(View v){
+        if (terms.getText().toString().length() > 0 || point.getText().toString().length() > 0){
+            double x = Double.parseDouble(String.valueOf(point.getText()));
+            int n = Integer.parseInt(String.valueOf(terms.getText()));
+            double a = p.polinomios(getFunction(), x, n);
+            aprox.setText("MacLaurin: " + a);
+        }else
+            btnCalculate.setEnabled(false);
+    }
 
-        //System.out.println(p.polinomios(getFunction(), x, n));
-        //aprox.setText("MacLaurin:" + p.polinomios(getFunction(), x, n));
-        //aprox.setText(":"+x);
-
-        System.out.println("test"+ x + n);
+    public void rGropuPerformed(View v){
+        dataVerification();
     }
 }
