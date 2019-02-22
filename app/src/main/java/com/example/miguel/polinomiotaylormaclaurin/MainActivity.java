@@ -15,13 +15,11 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup rGroup;
     RadioButton rSin, rCos, rExponential;
     Polinomio p;
-    Errores e;
     EditText terms, point;
     int typef;
 
     public MainActivity(){
         p = new Polinomio();
-        //e = new Errores();
     }
 
     @Override
