@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculatePerformed(View v){
-        if (terms.getText().toString().length() > 0 || point.getText().toString().length() > 0){
+        if (terms.getText().toString().length() > 0 && point.getText().toString().length() > 0){
             double x = Double.parseDouble(String.valueOf(point.getText()));
             int n = Integer.parseInt(String.valueOf(terms.getText()));
             double a = p.polinomios(getFunction(), x, n);
