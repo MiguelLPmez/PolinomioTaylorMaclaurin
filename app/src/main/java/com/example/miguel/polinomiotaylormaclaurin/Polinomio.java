@@ -36,10 +36,12 @@ public class Polinomio {
         }
         return resultadoDerivada;
     }
-
+/*
     private int factorial(int numero){
         return (numero == 0)? 1: numero * factorial(numero-1);
     }
-
-
+*/
+    private int factorial(int numero){
+        return (numero <= 1)? 1: numero * factorial(numero-1);
+    }
 }
