@@ -33,7 +33,7 @@ public final class Errores {
     }
 
     public static double porcentual(int funcion, double punto, double resultadoEstimado){
-        return absoluto(funcion, punto, resultadoEstimado) * 100;
+        return relativo(funcion, punto, resultadoEstimado) * 100;
     }
 
 }
