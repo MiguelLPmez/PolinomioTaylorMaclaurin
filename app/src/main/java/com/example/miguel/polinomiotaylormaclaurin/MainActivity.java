@@ -86,13 +86,13 @@ public class MainActivity extends AppCompatActivity {
             double a = p.polinomios(getFunction(), x, n);
             aprox.setText("MacLaurin: " + a);
 
-            double eAbsoluto = Errores.absoluto(typef, x, n);
+            double eAbsoluto = Errores.absoluto(typef, x, a);
             ea.setText("EA:    " + eAbsoluto);
 
-            double eRelativo = Errores.relativo(typef, x, n);
+            double eRelativo = Errores.relativo(typef, x, a);
             er.setText("ER:    " + eRelativo);
 
-            double ePorcentual = Errores.porcentual(typef, x, n);
+            double ePorcentual = Errores.porcentual(typef, x, a);
             ep.setText("ERP: " + ePorcentual);
         }else
             btnCalculate.setEnabled(false);
