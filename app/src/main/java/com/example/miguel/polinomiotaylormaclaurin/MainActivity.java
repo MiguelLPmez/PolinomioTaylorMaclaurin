@@ -87,10 +87,10 @@ public class MainActivity extends AppCompatActivity {
             aprox.setText("MacLaurin: " + a);
 
             double eAbsoluto = Errores.absoluto(typef, x, n);
-            ea.setText("EA: " + eAbsoluto);
+            ea.setText("EA:    " + eAbsoluto);
 
             double eRelativo = Errores.relativo(typef, x, n);
-            er.setText("ER: " + eRelativo);
+            er.setText("ER:    " + eRelativo);
 
             double ePorcentual = Errores.porcentual(typef, x, n);
             ep.setText("ERP: " + ePorcentual);
