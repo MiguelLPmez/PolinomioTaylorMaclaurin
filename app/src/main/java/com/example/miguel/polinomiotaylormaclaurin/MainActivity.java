@@ -15,10 +15,13 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup rGroup;
     RadioButton rSin, rCos, rExponential;
     Polinomio p;
+    Errores e;
     EditText terms, point;
+    int typef;
 
     public MainActivity(){
         p = new Polinomio();
+        //e = new Errores();
     }
 
     @Override
@@ -63,15 +66,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Polinomio.Funcion getFunction(){
-        if (rGroup.getCheckedRadioButtonId() == rSin.getId())
+        if (rGroup.getCheckedRadioButtonId() == rSin.getId()) {
+            typef = 0;
             return Polinomio.Funcion.SENO;
-
-        if (rGroup.getCheckedRadioButtonId() == rCos.getId())
+        }
+        if (rGroup.getCheckedRadioButtonId() == rCos.getId()) {
+            typef = 1;
             return Polinomio.Funcion.COSENO;
-
-        if (rGroup.getCheckedRadioButtonId() == rExponential.getId())
+        }
+        if (rGroup.getCheckedRadioButtonId() == rExponential.getId()) {
+            typef = 2;
             return Polinomio.Funcion.EULER;
-
+        }
         return null;
     }
 
@@ -81,6 +87,15 @@ public class MainActivity extends AppCompatActivity {
             int n = Integer.parseInt(String.valueOf(terms.getText()));
             double a = p.polinomios(getFunction(), x, n);
             aprox.setText("MacLaurin: " + a);
+
+            double eAbsoluto = Errores.absoluto(typef, x, n);
+            ea.setText("EA: " + eAbsoluto);
+
+            double eRelativo = Errores.relativo(typef, x, n);
+            er.setText("ER: " + eRelativo);
+
+            double ePorcentual = Errores.porcentual(typef, x, n);
+            ep.setText("ERP: " + ePorcentual);
         }else
             btnCalculate.setEnabled(false);
     }
