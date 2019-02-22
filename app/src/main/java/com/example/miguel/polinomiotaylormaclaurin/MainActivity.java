@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
-    public void calculatePErformed(View v){
+    public void calculatePerformed(View v){
         if (terms.getText().toString().length() > 0 || point.getText().toString().length() > 0){
             double x = Double.parseDouble(String.valueOf(point.getText()));
             int n = Integer.parseInt(String.valueOf(terms.getText()));
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             btnCalculate.setEnabled(false);
     }
 
-    public void rGropuPerformed(View v){
+    public void rGroupPerformed(View v){
         dataVerification();
     }
 
